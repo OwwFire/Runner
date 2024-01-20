@@ -43,7 +43,29 @@ html, body {
     width: 100%;
     height: 92.75vh;
     background: linear-gradient(to bottom, #3498db, wheat, wheat, green);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
+.playing-filed {
+    width: 100%;
+    margin-bottom: 10vh;
+}
 
+.charactes-container {
+    width: 97%;
+    margin-left: 1.5%;
+    margin-left: 1.5%;
+}
+
+.game-line {
+    background-color: black;
+    width: 100%;
+    height: 0.5vh;
+}
+
+.runner-character{
+    height: 8vh;
+    width: 4vw;
+}
