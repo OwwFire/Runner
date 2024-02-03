@@ -14,7 +14,8 @@ const addCssPositioning = (object) => {
     });
 };
 
-let movingTime = 5000;
+let movingTime = 5000; // Time from one side to another
+
 const addMovingAnimation = (object) => {
     object.animate({
         marginLeft: "-20%"
@@ -22,8 +23,10 @@ const addMovingAnimation = (object) => {
 };
 
 function addObstacle(object) {
+    //Duplicates an obstacle and adds all needed attr and css to it.
     const DuplicateObject = object.clone();
     addCssPositioning(DuplicateObject);
     addMovingAnimation(DuplicateObject);
+
     $('.charactes-container').append(DuplicateObject);
 };
