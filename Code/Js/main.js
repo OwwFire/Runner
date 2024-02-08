@@ -31,27 +31,41 @@ $(document).ready(function () {
 
     //Check if game is over
     setInterval(() => {
-        $('.charactes-container').children().each(function() {
+        $('.charactes-container').children().each(function () {
             if ($(this).hasClass('runner-character')) return;
-            if(areElementsOverlapping($('.runner-character')
-            , $(this))){
+            if (areElementsOverlapping($('.runner-character')
+                , $(this))) {
                 alert('DEAD');
             }
         })
     }, 1);
 
     function areElementsOverlapping(element1, element2) {
-        var element1Left = element1.css('margin-left');
-        var element2Left = element2.css('margin-left');
-        console.log('Check1:' + element1Left + element1.width()/2 + ", " +
-                    element2Left)
-
-    
+        positionElement1 = element1.position();
+        positionElement2 = element2.position();
+        positionElement1.left = Math.round(positionElement1.left) +
+            Number(
+                element1.css('marginLeft').replace('px', '')
+            );
+        positionElement2.left = Math.round(positionElement2.left) +
+            Number(
+                element2.css('marginLeft').replace('px', '')
+            );
+        positionElement1.top = Math.round(positionElement1.top) +
+            Number(
+                element1.css('marginTop').replace('px', '')
+            );
+        positionElement2.top = Math.round(positionElement2.top) +
+            Number(
+                element1.css('marginTop').replace('px', '')
+            );
+        console.log(positionElement1.top);
+        console.log(positionElement2.top);
         // Comparing if they are on the same space in the x dimension
-        if ((element1Left + element1.width()/2 >= element2Left &&
-            element1Left - element1.width()/2 <= element2Left) ||
-            (element2Left + element2.width()/2 >= element1Left &&
-            element2Left - element2.width()/2 <= element1Left))
+        if (positionElement1.left + element1.outerWidth() >= positionElement2.left
+            && positionElement1.left <= positionElement2.left
+            && positionElement1.top + element1.outerHeight() >= positionElement2.top
+            && positionElement1.top <= positionElement2.top)
             return true;
-      }
+    }
 });
