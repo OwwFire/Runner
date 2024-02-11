@@ -29,6 +29,15 @@ $(document).ready(function () {
         }, jumpTime)
     });
 
+    //Updating counter
+    let counterTimeUpgrader = 200;
+    setInterval(() => {
+        $('.top-bar-counter-number').text(
+            Number($('.top-bar-counter-number').text()) + 1
+        )
+    }, counterTimeUpgrader);
+
+
     //Check if game is over
     setInterval(() => {
         $('.charactes-container').children().each(function () {
@@ -59,8 +68,6 @@ $(document).ready(function () {
             Number(
                 element1.css('marginTop').replace('px', '')
             );
-        console.log(positionElement1.top);
-        console.log(positionElement2.top);
         // Comparing if they are on the same space in the x dimension
         if (positionElement1.left + element1.outerWidth() >= positionElement2.left
             && positionElement1.left <= positionElement2.left
