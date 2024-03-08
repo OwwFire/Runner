@@ -1,5 +1,14 @@
 $(document).ready(function () {
-    addObstacle(spikesObstacle);
+    const spikesObstacle = new Obstacle(
+        "\\Images\\Obstacles\\Spikes.png",
+        "Spikes",
+        "7vh",
+        "3vw",
+        5000
+    )
+
+    spikesObstacle.addObstacleToGame();
+
 
     //Jump functionlity
     let jumpFlag = false;

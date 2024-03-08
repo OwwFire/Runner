@@ -1,18 +1,22 @@
+var imageUrl = "\\Images\\Obstacles\\Spikes.png";
+var altText = "Spikes";
+var heightValue = "7vh";
+var widthValue = "3vw";
 
-const spikesObstacle = $("<img>")
+/*const spikesObstacle = $("<img>")
     .attr({
-        src: "\\Images\\Obstacles\\Spikes.png",
-        alt: "Spikes"
+        src: imageUrl,
+        alt: altText
     }).css({
-        height: "7vh",
-        width: "3vw"
+        height: heightValue,
+        width: widthValue
     });
 const addCssPositioning = (object) => {
     object.css({
         marginLeft: "100%",
         alignSelf: "flex-end"
     });
-};
+}; */
 
 let movingTime = 5000; // Time from one side to another
 
